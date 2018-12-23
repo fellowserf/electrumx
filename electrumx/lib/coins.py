@@ -2503,7 +2503,6 @@ class Myriadcoin(AuxPowMixin, Coin):
     REORG_LIMIT = 2000
     RPC_PORT = 10889
 
-
 class MyriadcoinTestnet(Myriadcoin):
     NAME = "Myriadcoin"
     SHORTNAME = "XMT"
@@ -2515,3 +2514,22 @@ class MyriadcoinTestnet(Myriadcoin):
     WIF_BYTE = bytes.fromhex("ef")
     GENESIS_HASH = ('0000017ce2a79c8bddafbbe47c004aa9'
                     '2b20678c354b34085f62b762084b9788')
+
+# todo: pw chc spec
+class Chaincoin(Coin):
+    NAME = "Chaincoin"
+    SHORTNAME = "CHC"
+    NET = "mainnet"
+    XPUB_VERBYTES = bytes.fromhex("0488b21e") 
+    XPRV_VERBYTES = bytes.fromhex("0488ade4") 
+    P2PKH_VERBYTE = bytes.fromhex("1c") 
+    P2SH_VERBYTES = [bytes.fromhex("04")] 
+    WIF_BYTE = bytes.fromhex("9c")
+    GENESIS_HASH = ('00000f639db5734b2b861ef8dbccc33a'
+                    'ebd7de44d13de000a12d093bcc866c64') 
+    DESERIALIZER = lib_tx.DeserializerSegWit 
+    TX_COUNT = 6799668
+    TX_COUNT_HEIGHT = 1699917
+    TX_PER_BLOCK = 4
+    RPC_PORT = 11995 
+

@@ -9,3 +9,6 @@ docs/_build
 /build
 /dist
 /electrumx.egg-info
+/.vs/ProjectSettings.json
+/.vs/slnx.sqlite
+/.vs/electrumx/v15/.suo
