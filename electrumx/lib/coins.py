@@ -2515,7 +2515,6 @@ class MyriadcoinTestnet(Myriadcoin):
     GENESIS_HASH = ('0000017ce2a79c8bddafbbe47c004aa9'
                     '2b20678c354b34085f62b762084b9788')
 
-# todo: pw chc spec
 class Chaincoin(Coin):
     NAME = "Chaincoin"
     SHORTNAME = "CHC"
@@ -2533,3 +2532,8 @@ class Chaincoin(Coin):
     TX_PER_BLOCK = 4
     RPC_PORT = 11995 
 
+    @classmethod
+    def header_hash(cls, header):
+        '''Given a header return the hash.'''
+        import c11_hash
+        return c11_hash.getPoWHash(header)
